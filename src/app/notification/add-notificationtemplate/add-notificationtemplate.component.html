@@ -1,0 +1,16 @@
+<h2>NotificationTemplate Save Form</h2>
+    <form (ngSubmit)="addNotifyTemplate()">
+   
+
+        <label for="templateName">templateName:</label>
+        <input [(ngModel)]="newNotifyTemplate.templateName" type="text"  name="templateName" required><br><br>
+
+        <label for="content">content:</label>
+        <input [(ngModel)]="newNotifyTemplate.content" type="text"  name="content" required><br><br>
+        
+
+    <input type="submit" value="Submit">
+    </form>
+    <a href="/">Go home</a>
+
+

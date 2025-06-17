@@ -1,0 +1,40 @@
+<h2>Search Payment by ID</h2>
+<input [(ngModel)]="paymentId" type="number" placeholder="Enter payment ID" />
+<button (click)="getPaymentById()">view Payment</button>
+<div *ngIf="payment">
+  <p><strong>ID:</strong> {{ payment.paymentId }}</p>
+  <p><strong>amount:</strong> {{ payment.amount }}</p>
+  <p><strong>paymentDate:</strong> {{ payment.paymentDate }}</p>
+  <p><strong>paymentMethod:</strong> {{ payment.paymentMethod }}</p>
+  <p><strong>paymentStatus:</strong> {{ payment.paymentStatus }}</p>
+ 
+</div>
+<h2>All Payments</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>paymentId</th>
+      <th>amount</th>
+      <th>paymentDate</th>
+      <th>paymentMethod</th>
+      <th>paymentStatus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let payment of payments">
+      <td>{{ payment.paymentId }}</td>
+      <td>{{ payment.amount }}</td>
+      <td>{{ payment.paymentDate }}</td>
+      <td>{{ payment.paymentMethod }}</td>
+      <td>{{ payment.paymentStatus }}</td>
+     
+     
+      <!-- <td>
+        <button (click)="populateUpdateForm(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </td> -->
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+

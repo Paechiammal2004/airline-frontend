@@ -1,0 +1,18 @@
+
+<h2>Add Booking</h2>
+<form (ngSubmit)="addBooking()">
+  <input [(ngModel)]="newBooking.customerId" name="customerId" type=number placeholder="customerId" required />
+  <input [(ngModel)]="newBooking.flightId" name="flightId" type="number" placeholder="flightId" required />
+  <input [(ngModel)]="newBooking.bookingDate" name="bookingDate" type="text" placeholder="bookingDate" required />
+  <input [(ngModel)]="newBooking.seatNumber" name="seatNumber" type="text" placeholder="seatNumber" required />
+  <input [(ngModel)]="newBooking.status" name="status" type="text" placeholder="status" required />
+  <input [(ngModel)]="newBooking.payment.paymentId" name="paymentId" type="text" placeholder="paymentId" required />
+  <button type="submit">Add Booking</button>
+</form>
+<a href="/">Go home</a>
+
+
+
+
+
+

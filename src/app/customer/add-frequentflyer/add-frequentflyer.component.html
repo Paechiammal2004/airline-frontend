@@ -1,0 +1,22 @@
+
+<h2>Add Frequentflyer</h2>
+<form (ngSubmit)="addFrequentflyer()">
+
+  <label for="membershipNumber" >membershipNumber:</label>
+  <input [(ngModel)]="newFrequentflyer.membershipNumber" name="membershipNumber" placeholder="membershipNumber" required /><br><br>
+
+  <label for="status" >status:</label>
+  <input [(ngModel)]="newFrequentflyer.status" name="status" type="text" placeholder="status" required /><br><br>
+
+  <label for="pointsEarned" >pointsEarned:</label>
+  <input [(ngModel)]="newFrequentflyer.pointsEarned" name="pointsEarned" type="number" placeholder="arrivalTime" required /><br><br>
+
+  <label for="tierExpiryDate" >tierExpiryDate:</label>
+  <input [(ngModel)]="newFrequentflyer.tierExpiryDate" name="tierExpiryDate" type="text" placeholder="tierExpiryDate" required /><br><br>
+
+  <label for="customer" >customer ID:</label>
+  <input [(ngModel)]="newFrequentflyer.customer.customerId" name="customer" type="text" placeholder="customerId" required /><br><br>
+  
+  <button type="submit">Add Flight</button>
+</form>
+<a href="/">Go home</a>

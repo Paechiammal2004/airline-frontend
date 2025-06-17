@@ -1,0 +1,27 @@
+<p>add-passenger works!</p>
+<h2>Passenger save Form</h2>
+    
+    <form (ngSubmit)="addPassenger()">
+
+        <label for="name" >Name:</label><br>
+        <input [(ngModel)]="newPassenger.name" type="text" id="name" name="name" required><br><br>
+
+        <label for="age" >Age:</label><br>
+        <input [(ngModel)]="newPassenger.age" type="number" id="age" name="age" required><br><br>
+
+        <label for="gender" >Gender:</label><br>
+        <input [(ngModel)]="newPassenger.gender"type="text" id="gender" name="gender" required><br><br>
+
+        <label for="passportNumber" >PassportNumber:</label><br>
+        <input [(ngModel)]="newPassenger.passportNumber"type="text" id="passportNumber" name="passportNumber" required><br><br>
+
+        <label for="nationality" >Nationality:</label><br>
+        <input [(ngModel)]="newPassenger.nationality"type="text" id="nationality" name="nationality" required><br><br>
+
+        <label for="bookingId" >Booking ID:</label><br>
+        <input [(ngModel)]="newPassenger.booking.bookingId" name="bookingId" type="text" placeholder="bookingId" required />
+        
+    <input type="submit" value="Submit">
+    </form>
+    <a href="/">Go home</a>
+    

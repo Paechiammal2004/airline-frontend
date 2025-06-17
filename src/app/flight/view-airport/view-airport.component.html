@@ -1,0 +1,41 @@
+<p>view-airport works!</p>
+<h2>Search Airport by ID</h2>
+<input [(ngModel)]="airportId" type="number" placeholder="Enter airport ID" />
+<button (click)="getAirportById()">view Airport</button>
+<div *ngIf="airport">
+  <p><strong>ID:</strong> {{ airport.airportId }}</p>
+  <p><strong>code:</strong> {{ airport.code }}</p>
+  <p><strong>name:</strong> {{ airport.name }}</p>
+  <p><strong>country:</strong> {{ airport.country }}</p>
+  <p><strong>city:</strong> {{ airport.city }}</p>
+ 
+</div>
+<h2>All Airports</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>AirportId</th>
+      <th>code</th>
+      <th>name</th>
+      <th>country</th>
+      <th>city</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let airport of airports">
+      <td>{{ airport.airportId }}</td>
+      <td>{{ airport.code }}</td>
+      <td>{{ airport.name }}</td>
+      <td>{{ airport.country }}</td>
+      <td>{{ airport.city }}</td>
+     
+     
+      <!-- <td>
+        <button (click)="populateUpdateForm(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </td> -->
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+

@@ -1,0 +1,43 @@
+ 
+<h2>Search Notification by ID</h2>
+<input [(ngModel)]="notificationId" type="number" placeholder="Enter ID" />
+<button (click)="getNotificationById()">view Notifications</button>
+
+
+<div *ngIf="notificationById">
+  <p><strong>ID:</strong> {{ notificationById.notificationId }}</p>
+  <p><strong>message:</strong> {{ notificationById.message }}</p>
+  <p><strong>type:</strong> {{ notificationById.type }}</p>   
+  <p><strong>sentStatus:</strong> {{ notificationById.sentStatus }}</p>
+  <p><strong>sentDate:</strong> {{ notificationById.sentDate }}</p>
+  <p><strong>CustomerId:</strong> {{ notificationById.customerId }}</p>
+
+	
+</div>
+
+<h2>All Notifications</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>notificationId</th><th>message</th><th>type</th><th>sentStatus</th><th>sentDate</th><th>customerId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let notification of notifications">
+      <td>{{ notification.notificationId }}</td>
+      <td>{{ notification.message }}</td>
+      <td>{{ notification.type }}</td>
+      <td>{{ notification.sentStatus }}</td>
+      <td>{{ notification.sentDate }}</td>
+      <td>{{ notification.customerId }}</td>
+      
+<!--      
+       <td>
+        <button (click)="populateUpdateForm(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </td>  -->
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+<hr /> 

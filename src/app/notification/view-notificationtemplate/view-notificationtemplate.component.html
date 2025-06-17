@@ -1,0 +1,35 @@
+
+<h2>Search notificationtemplate by ID</h2>
+<input [(ngModel)]="notifyTemplateId" type="number" placeholder="Enter ID" />
+<button (click)="getNotifyTemplateById()">view NotificationTemplate</button>
+
+<div *ngIf="notifyTemplateById">
+  <p><strong>ID:</strong> {{ notifyTemplateById.templateId }}</p>
+  <p><strong>templateName:</strong> {{ notifyTemplateById.templateName }}</p>
+  <p><strong>content:</strong> {{ notifyTemplateById.content }}</p>
+ 
+</div>
+
+<h2>All NotifyTemplates</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>templateId</th><th>templateName</th><th>content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let notifyTemplate of notifyTemplates">
+      <td>{{ notifyTemplate.templateId }}</td>
+      <td>{{ notifyTemplate.templateName }}</td>
+      <td>{{ notifyTemplate.content }}</td>
+      
+      <!-- <td>
+        <button (click)="populateUpdateForm(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </td> -->
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+<hr /> 
+

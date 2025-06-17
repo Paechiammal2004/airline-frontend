@@ -1,0 +1,106 @@
+
+<h2>Search Booking by ID</h2>
+<input [(ngModel)]="bookingId" type="number" name=bookingId placeholder="Enter ID" />
+<button (click)="getBookingById()">view Bookings</button>
+<button (click)="getFullDetails()">getFullDetails</button>
+
+<div *ngIf="bookingById">
+  <p><strong>ID:</strong> {{ bookingById.bookingId }}</p>
+  <p><strong>customerId:</strong> {{ bookingById.customerId }}</p>
+  <p><strong>flightId:</strong> {{ bookingById.flightId }}</p>
+  <p><strong>seatNumber:</strong> {{ bookingById.seatNumber }}</p>
+  <p><strong>bookingDate:</strong> {{ bookingById.bookingDate }}</p>
+  <p><strong>status:</strong> {{ bookingById.status }}</p>
+
+<div   *ngIf="bookingById.payment">
+  <h2>Payment details </h2>
+              <li><strong>Payment ID:</strong> {{ bookingById.payment.paymentId }}</li>
+               <li><strong>Amount:</strong> {{ bookingById.payment.amount }}</li>
+                <li><strong>Payment Date:</strong> {{ bookingById.payment.paymentDate }}</li>
+                 <li><strong>Payment Method:</strong> {{ bookingById.payment.paymentMethod }}</li>
+                   <li><strong>Payment Status:</strong> {{ bookingById.payment.paymentStatus }}</li>
+      </div>
+  
+</div>
+
+
+<div *ngIf="bookingDetails">
+  <h3>Booking Full Details:</h3>
+  <ul>
+    <li><strong>Booking ID:</strong> {{ bookingDetails.bookingId }}</li>
+    <li><strong>Customer ID:</strong> {{ bookingDetails.customerId }}</li>
+    <li><strong>Flight ID:</strong> {{ bookingDetails.flightId }}</li>
+    <li><strong>Booking Date:</strong> {{ bookingDetails.bookingDate }}</li>
+    <li><strong>Seat Number:</strong> {{ bookingDetails.seatNumber }}</li>
+    <li><strong>Status:</strong> {{ bookingDetails.status }}</li>
+
+    <li><strong>Payment:</strong>
+      <ul *ngIf="bookingDetails.payment">
+        <li><strong>Payment ID:</strong> {{ bookingDetails.payment.paymentId }}</li>
+        <li><strong>Amount:</strong> {{ bookingDetails.payment.amount }}</li>
+        <li><strong>Payment Date:</strong> {{ bookingDetails.payment.paymentDate }}</li>
+        <li><strong>Method:</strong> {{ bookingDetails.payment.paymentMethod }}</li>
+        <li><strong>Status:</strong> {{ bookingDetails.payment.paymentStatus }}</li>
+      </ul>
+    </li>
+
+   
+  </ul>
+</div>
+
+<h2>All Bookings</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>bookingId</th><th>customerId</th><th>flightId</th><th>seatNumber</th><th>bookingDate</th><th>status</th><th>paymentId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of bookings">
+      <td>{{ booking.bookingId }}</td>
+      <td>{{ booking.customerId }}</td>
+      <td>{{ booking.flightId }}</td>
+      <td>{{ booking.seatNumber }}</td>
+      <td>{{ booking.bookingDate }}</td>
+      <td>{{ booking.status }}</td>
+      <td>{{ booking.payment.paymentId }}</td>
+     
+      <td>
+        <button (click)="editBooking(booking)">Edit</button>
+          <button *ngIf="booking.bookingId !== undefined" (click)="deleteBooking(booking.bookingId!)">Delete</button>
+        </td>
+     </tr> 
+  </tbody>
+</table> 
+
+
+<div *ngIf="selectedBooking">
+  <h3>Edit Booking</h3>
+  <form (ngSubmit)="updateBooking()">
+    <label for="bookingDate">Booking Date:</label><br>
+    <input [(ngModel)]="selectedBooking.bookingDate" name="bookingDate" id="bookingDate" placeholder="YYYY-MM-DD" required /><br><br>
+
+    <label for="seatNumber">Seat Number:</label><br>
+    <input [(ngModel)]="selectedBooking.seatNumber" name="seatNumber" id="seatNumber" type="number" placeholder="Seat No" required /><br><br>
+
+    <label for="status">Status:</label><br>
+    <input [(ngModel)]="selectedBooking.status" name="status" id="status" type="text" placeholder="Status" required /><br><br>
+
+    <label for="customerId">Customer ID:</label><br>
+    <input [(ngModel)]="selectedBooking.customerId" name="customerId" id="customerId" type="number" placeholder="Customer Id" required /><br><br>
+
+    <label for="flightId">Flight ID:</label><br>
+    <input [(ngModel)]="selectedBooking.flightId" name="flightId" id="flightId" type="number" placeholder="Flight Id" required /><br><br>
+
+    <label for="paymentId">Payment ID:</label><br>
+    <input [(ngModel)]="selectedBooking.payment.paymentId" name="paymentId" id="paymentId" type="number" placeholder="Payment Id" required /><br><br>
+    
+
+    <button type="submit">Update</button>
+    <!--<button type="button" (click)="selectedBooking = undefined">Cancel</button>-->
+  </form>
+</div>
+
+
+<a href="/">Go home</a>
+<hr /> 

@@ -1,0 +1,50 @@
+<p>view-passenger works!</p>
+<h2>Search Passenger by ID</h2>
+<input [(ngModel)]="passengerId" type="number" name="passengerId" placeholder="Enter ID" />
+<button (click)="getPassengerById()">view Passenger</button>
+
+
+<div *ngIf="passengerById">
+  <p><strong>ID:</strong> {{ passengerById.passengerId }}</p>
+  <p><strong>name:</strong> {{ passengerById.name }}</p>
+  <p><strong>gender:</strong> {{ passengerById.gender }}</p>
+  <p><strong>age:</strong> {{ passengerById.age }}</p>
+  <p><strong>passportNumber:</strong> {{ passengerById.passportNumber }}</p>
+  <p><strong>nationality:</strong> {{ passengerById.nationality }}</p>
+  <p><strong>Booking ID:</strong> {{ passengerById.booking.bookingId }}</p>
+  <!-- <div   *ngIf="passengerById.booking">
+    <h2>Booking details </h2>
+                
+                 <li><strong>Customer ID:</strong> {{ passengerById.booking.customerId }}</li>
+                  <li><strong>Flight ID:</strong> {{ passengerById.booking.flightId }}</li>
+                   <li><strong>SeatNumber</strong>{{ passengerById.booking.seatNumber }}</li>
+                     <li><strong>bookingDate:</strong> {{ passengerById.booking.bookingDate }}</li>
+                     <li><strong>Status:</strong> {{ passengerById.booking.status }}</li>
+                      <li><strong>Payment ID:</strong> {{ PassengerById.booking.paymentId }}</li> 
+        </div>
+     -->
+  </div>
+
+<h2>All Passengers</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>passengerId</th><th>name</th><th>age</th><th>gender</th><th>passportNumber</th><th>nationality</th><th>bookingId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let passenger of passengers">
+      <td>{{ passenger.passengerId }}</td>
+      <td>{{ passenger.name }}</td>
+      <td>{{ passenger.age }}</td>
+      <td>{{ passenger.gender }}</td>
+      <td>{{ passenger.passportNumber }}</td>
+      <td>{{ passenger.nationality }}</td>
+      <td>{{ passenger.booking.bookingId }}</td>
+     
+  
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+<hr /> 

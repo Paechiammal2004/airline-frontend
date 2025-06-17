@@ -1,0 +1,42 @@
+<h2>Search Customer by ID</h2>
+<input [(ngModel)]="customerId" type="number" placeholder="Enter ID" />
+<button (click)="getCustomerById()">view Customers</button>
+
+<div *ngIf="customerById">
+  <p><strong>Id:</strong> {{ customerById.customerId }}</p>
+  <p><strong>firstName:</strong> {{ customerById.firstName }}</p>
+  <p><strong>lastName:</strong> {{ customerById.lastName }}</p>
+  <p><strong>email:</strong> {{ customerById.email }}</p>
+  <p><strong>phone:</strong> {{ customerById.phone }}</p>
+  <p><strong>dateOfBirth:</strong> {{ customerById.dateOfBirth }}</p>
+  <p><strong>loyaltyPoints:</strong> {{ customerById.loyaltyPoints }}</p>
+ 
+</div>
+
+<h2>All Customers</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>customerId</th><th>firstName</th><th>lastName</th><th>email</th><th>phone</th><th>dateOfBirth</th><th>loyaltyPoints</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.customerId }}</td>
+      <td>{{ customer.firstName }}</td>
+      <td>{{ customer.lastName }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.dateOfBirth }}</td>
+      <td>{{ customer.loyaltyPoints }}</td>
+      
+     
+      <!-- <td>
+        <button (click)="populateUpdateForm(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </td> -->
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+<hr /> 
+

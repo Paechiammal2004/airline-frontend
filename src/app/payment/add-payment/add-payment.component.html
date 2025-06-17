@@ -1,0 +1,24 @@
+
+<h2>Payment Save Form</h2>
+    <form (ngSubmit)="addPayment()">
+       
+        
+        <label for="amount">Amount:</label><br>
+        <input [(ngModel)]="newPayment.amount" type="number"  name="amount" required><br><br>
+
+        <label for="paymentDate">PaymentDate:</label><br>
+        <input [(ngModel)]="newPayment.paymentDate" type="date"  name="paymentDate" required><br><br>
+        
+        <label for="paymentMethod">PaymentMethod:</label><br>
+        <input [(ngModel)]="newPayment.paymentMethod" type="text" id="paymentMethod"  name="paymentMethod" required><br><br>
+
+        <label for="paymentStatus">paymentStatus:</label><br>
+        <input [(ngModel)]="newPayment.paymentStatus" type="text" id="paymentStatus"  name="paymentStatus" required><br><br>
+    
+       
+        
+ 
+    <input type="submit" value="Submit">
+    </form>
+    <a href="/">Go home</a>
+

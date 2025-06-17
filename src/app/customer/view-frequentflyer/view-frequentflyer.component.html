@@ -1,0 +1,41 @@
+
+<h2>Search Frequentflyer by ID</h2>
+<input [(ngModel)]="frequentflyerId" type="number" placeholder="Enter ID" />
+<button (click)="getFlyerById()">view Flyers</button>
+
+<div *ngIf="frequentflyerById">
+  <p><strong>ID:</strong> {{ frequentflyerById.flierId }}</p>
+  <p><strong>membershipNumber:</strong> {{ frequentflyerById.membershipNumber }}</p>
+  <p><strong>status:</strong> {{ frequentflyerById.status }}</p>
+  <p><strong>pointsEarned:</strong> {{ frequentflyerById.pointsEarned }}</p>
+  <p><strong>tierExpiryDate:</strong> {{ frequentflyerById.tierExpiryDate }}</p>
+  <p><strong>customerID:</strong> {{ frequentflyerById.customer.customerId }}</p>
+ 
+
+</div>
+
+<h2>All Frequentflyers</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>flierId</th><th>membershipNumber</th><th>status</th><th>pointsEarned</th><th>tierExpiryDate</th><th>customerId</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flyer of frequentflyers">
+      <td>{{ flyer.flierId }}</td>
+      <td>{{ flyer.membershipNumber }}</td>
+      <td>{{ flyer.status }}</td>
+      <td>{{ flyer.pointsEarned }}</td>
+      <td>{{ flyer.tierExpiryDate }}</td>
+    
+      <td>{{ flyer.customer.customerId }}</td>
+     
+      <!-- <td>
+        <button (click)="populateUpdateForm(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </td> -->
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+<hr /> 

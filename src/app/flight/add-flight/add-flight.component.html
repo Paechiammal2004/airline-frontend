@@ -1,0 +1,31 @@
+<p>add-flight works!</p>
+<h2>Add Flight</h2>
+<form (ngSubmit)="addFlight()">
+
+  <label for="flightNumber" >FlightNumber:</label>
+  <input [(ngModel)]="newFlight.flightNumber" name="flightNumber" placeholder="flightNumber" required /><br><br>
+
+  <label for="departureTime" >DepartureTime:</label>
+  <input [(ngModel)]="newFlight.departureTime" name="departureTime" type="text" placeholder="departureTime" required /><br><br>
+
+  <label for="arrivalTime" >ArrivalTime:</label>
+  <input [(ngModel)]="newFlight.arrivalTime" name="arrivalTime" type="text" placeholder="arrivalTime" required /><br><br>
+
+  <label for="seatCapacity" >SeatCapacity:</label>
+  <input [(ngModel)]="newFlight.seatCapacity" name="seatCapacity" type="text" placeholder="seatCapacity" required /><br><br>
+
+  <label for="AvailableSeats" >availableSeats:</label>
+  <input [(ngModel)]="newFlight.availableSeats" name="availableSeats" type="text" placeholder="availableSeats" required /><br><br>
+
+  <label for="status" >status:</label>
+  <input [(ngModel)]="newFlight.status" name="status" type="text" placeholder="status" required /><br><br>
+
+  <label for="departureAirport" > DepartureAirportID:</label>
+  <input [(ngModel)]="newFlight.departureAirport.airportId" name="departureAirport" type="text" placeholder="departureAirport" required /><br><br>
+
+  <label for="arrivalAirport" >ArrivalAirport ID:</label>
+  <input [(ngModel)]="newFlight.arrivalAirport.airportId" name="arrivalAirport" type="text" placeholder="arrivalAirport" required /><br><br>
+  
+  <button type="submit">Add Flight</button>
+</form>
+<a href="/">Go home</a>

@@ -1,0 +1,47 @@
+
+<h2>Search Flight by ID</h2>
+<input [(ngModel)]="flightId" type="number" placeholder="Enter ID" />
+<button (click)="getFlightById()">view Flights</button>
+
+<div *ngIf="flightById">
+  <p><strong>ID:</strong> {{ flightById.flightId }}</p>
+  <p><strong>flightNumber:</strong> {{ flightById.flightNumber }}</p>
+  <p><strong>departureTime:</strong> {{ flightById.departureTime }}</p>
+  <p><strong>arrivalTime:</strong> {{ flightById.arrivalTime }}</p>
+  <p><strong>seatCapacity:</strong> {{ flightById.seatCapacity }}</p>
+  <p><strong>availableSeats:</strong> {{ flightById.availableSeats }}</p>
+  <p><strong>status:</strong> {{ flightById.status }}</p>
+  <p><strong>departureAirportID:</strong> {{ flightById.departureAirport.airportId }}</p>
+  <p><strong>arrivalAirportID:</strong> {{ flightById.arrivalAirport.airportId }}</p>
+
+	
+</div>
+
+<h2>All Flights</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>flightId</th><th>flightNumber</th><th>departureTime</th><th>arrivalTime</th><th>seatCapacity</th><th>availableSeats</th><th>status</th><th>departureAirport</th><th>arrivalAirport</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flight of flights">
+      <td>{{ flight.flightId }}</td>
+      <td>{{ flight.flightNumber }}</td>
+      <td>{{ flight.departureTime }}</td>
+      <td>{{ flight.arrivalTime }}</td>
+      <td>{{ flight.seatCapacity }}</td>
+      <td>{{ flight.availableSeats }}</td>
+      <td>{{ flight.status }}</td>
+      <td>{{ flight.departureAirport.airportId }}</td>
+      <td>{{ flight.arrivalAirport.airportId }}</td>
+     
+      <!-- <td>
+        <button (click)="populateUpdateForm(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </td> -->
+     </tr> 
+  </tbody>
+</table> 
+<a href="/">Go home</a>
+<hr /> 
